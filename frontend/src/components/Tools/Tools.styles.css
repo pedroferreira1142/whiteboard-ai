@@ -1,0 +1,30 @@
+.tools-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tool-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.tool-button:hover {
+    background-color: #0056b3;
+}

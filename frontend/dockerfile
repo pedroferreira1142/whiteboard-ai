@@ -1,0 +1,21 @@
+# Use Node.js LTS version
+FROM node:18
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and install dependencies
+COPY package.json package-lock.json ./
+RUN npm install --frozen-lockfile
+
+# Copy source code
+COPY . .
+
+# Build the Vite React app
+RUN npm run build
+
+# Expose the frontend port (default Vite preview port is 4173)
+EXPOSE 4173
+
+# Start the Vite preview server
+CMD ["npm", "run", "preview"]

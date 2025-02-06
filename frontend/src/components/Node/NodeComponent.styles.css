@@ -1,0 +1,264 @@
+.node-chat-container {
+  position: absolute;
+  /* Allow absolute positioning for stacking */
+  width: 400px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: grab;
+  z-index: 1;
+  /* Base z-index */
+  transition: transform 0.2s ease-in-out;
+  /* Smooth dragging effect */
+}
+
+.node-chat-container:active {
+  cursor: grabbing;
+  z-index: 10;
+  /* Bring the active node to the front */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* Highlight the active node */
+  transition: none;
+  /* Disable transition during active drag */
+}
+
+.node-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.node-header h4 {
+  margin: 0;
+}
+
+.delete-btn {
+  background: grey;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-size: 18px;
+  cursor: pointer;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.node-summary {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background-color: #f6f8fa;
+}
+
+.chat-message {
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.user-message {
+  align-self: flex-end;
+}
+
+.assistant-message {
+  background-color: #f2f3f4;
+  align-self: flex-start;
+}
+
+.chat-input {
+  display: flex;
+  gap: 5px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chat-input button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.node-connect {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.connect-select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.node-connect button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.connected-nodes {
+  margin-top: 10px;
+  padding: 5px;
+  border-top: 1px solid #ccc;
+}
+
+.connected-nodes h5 {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.connected-nodes ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.connected-nodes li {
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.node-header h4 {
+  display: flex;
+  align-items: center;
+}
+
+.edit-icon {
+  font-size: 20px;
+  color: #007bff;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.node-title-edit input {
+  font-size: 16px;
+  width: 100%;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.node-chat-container.highlight {
+  border: 2px solid #007bff;
+  background-color: #e7f3ff;
+}
+
+.node-popup {
+  position: absolute;
+  top: -10px;
+  left: 110%;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  z-index: 1000;
+  width: 150px;
+}
+
+.node-chat-container {
+  opacity: 1;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.node-chat-container.dimmed {
+  opacity: 0.2;
+}
+
+.node-chat-container.highlight {
+  border: 2px solid #007bff;
+  background-color: #e7f3ff;
+}
+
+.node-chat-container.sub-highlight {
+  border: 2px solid #9fa0a1;
+}
+
+.header-popup {
+  margin: 0px
+}
+
+.list-popup {
+  margin: 0px;
+  margin-bottom:5px;
+  font-size: 13px;
+}
+
+.chatNode-container {
+  width: 350px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.node-container {
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  will-change: transform;
+}
+
+.node-container[data-dragging='true'] {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* Slightly scale up while dragging */
+}
+
+.node-title {
+  display: flex;
+  align-items: center;
+ /* Adjust width as needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  font-size: 15px;
+}
+
+.node-title-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+   max-width: 250px;/* Ensure truncation happens */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Show full title on hover */
+.node-titles:hover .node-title-text {
+  white-space: normal;
+  overflow: visible;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  max-width: 300px; /* Adjust for full view */
+  z-index: 10;
+}
+
+.markdown-node * {
+  overflow:hidden !important;
+  overflow-x: hidden;
+  scrollbar-color: grey white !important;
+}
+

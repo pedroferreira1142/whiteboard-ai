@@ -1,0 +1,42 @@
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - DATABASE_URL=postgresql://my_user:my_password@db:5432/my_database
+      - OPENAI_API_KEY=you-open-ai-key
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "4173:4173"
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: my_user
+      POSTGRES_PASSWORD: my_password
+      POSTGRES_DB: my_database
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "my_user", "-d", "my_database"]
+      interval: 10s
+      retries: 5
+
+
+volumes:
+  pgdata:

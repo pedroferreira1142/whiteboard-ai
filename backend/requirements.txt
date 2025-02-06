@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+pydantic[dotenv]
+alembic
+pydantic_settings
+openai>=1.0.0
