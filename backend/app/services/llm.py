@@ -199,19 +199,24 @@ class LLMHelper:
         Returns:
             Optional[dict]: A dictionary with keys "title" and "summary" if successful; otherwise, None.
         """
-        logger.info("Generating summary and title for text: %s", text[:100])
+        logger.info("Generating summary and title for text: %s", text[:1000])
         try:
-            response = client.chat.completions.create(
+            title = client.chat.completions.create(
                 model="gpt-4o",
                 messages=[
-                    {"role": "user", "content": "Generate a title and summary..."},
-                    {"role": "user", "content": text}
+                    {"role": "user", "content": "Generate a title(max 5 words) and just answer with the title, for this: " + text}
                 ],
             )
-            llm_text = response.choices[0].message.content.strip().split("\n")
-            if len(llm_text) < 2:
-                return None
-            result = {"title": llm_text[0], "summary": "\n".join(llm_text[1:])}
+            title = title.choices[0].message.content.strip().split("\n")
+            summary = client.chat.completions.create(
+                model="gpt-4o",
+                messages=[
+                    {"role": "user", "content": "Generate a summary for this" + text}
+                ],
+            )
+            summary = summary.choices[0].message.content.strip().split("\n")
+            
+            result = {"title": "\n".join(title), "summary": "\n".join(summary)}
             logger.info("Generated title: %s", result["title"])
             logger.info("Generated summary: %s", result["summary"][:100])
             return result
