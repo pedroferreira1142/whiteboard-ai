@@ -1,6 +1,4 @@
-Below is an example of a README file that documents the project and explains how to run it using Docker Compose. You can adjust details like the project name, contact information, or license as needed.
 
----
 
 # Whiteboard AI Report System
 
