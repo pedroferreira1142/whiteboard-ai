@@ -1,4 +1,4 @@
-
+<img width="1443" alt="image" src="https://github.com/user-attachments/assets/2eac3ce6-c8c0-4d92-ad39-c39e6d8af370" />
 
 # Whiteboard AI Report System
 
@@ -9,8 +9,13 @@ The Whiteboard AI Report System is a full-stack application that allows users to
 ## Features
 
 - **Dynamic Whiteboard Management:** Create nodes, subjects, and connections in real time.
+  ![image](https://github.com/user-attachments/assets/171293fc-8bbf-4450-a795-bd712198063f)
+  ![image](https://github.com/user-attachments/assets/6d75141a-2857-4210-b744-c21d36aadf1b)
+
 - **AI-Powered Text Generation:** Use OpenAI’s API to generate summaries, introductions, responses, and comprehensive reports.
 - **Report Generation:** Automatically generate detailed reports by aggregating node data and interactions.
+  <img width="1443" alt="image" src="https://github.com/user-attachments/assets/3af4baba-ab16-4150-8b7a-476e0af25104" />
+
 - **Dockerized Environment:** Easily build and deploy the application using Docker Compose.
 
 ## Project Structure
