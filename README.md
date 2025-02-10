@@ -1,4 +1,3 @@
-<img width="1443" alt="image" src="https://github.com/user-attachments/assets/2eac3ce6-c8c0-4d92-ad39-c39e6d8af370" />
 
 # Whiteboard AI Report System
 
