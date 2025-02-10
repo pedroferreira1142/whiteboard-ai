@@ -5,6 +5,20 @@
 
 The Whiteboard AI Report System is a full-stack application that allows users to create, interact with, and manage dynamic whiteboards. The application leverages a FastAPI backend and a React-based frontend to manage nodes, subjects, connections, and reports. An AI language model (OpenAI) is integrated to generate summaries, introductions, detailed report bodies, and responses based on user interactions.
 
+## AI-Powered Mind Mapping & Brainstorming Tool
+📌 Goal: Help users generate, structure, and connect ideas dynamically.
+🔍 Use Case Examples: Writers, researchers, project managers.
+
+Key Features:
+
+🌱 AI generates initial idea nodes based on prompts.
+🔀 Users can freely rearrange and interconnect nodes.
+📌 Color-coded categories to visually distinguish topics.
+🗂 Supports attachments (e.g., images, links, PDFs) for context.
+🛠 Editable node content with AI-assisted expansion.
+🎯 AI suggests relevant connections between nodes.
+📝 One-click export to a structured report or presentation format.
+
 ## Features
 
 - **Dynamic Whiteboard Management:** Create nodes, subjects, and connections in real time.
