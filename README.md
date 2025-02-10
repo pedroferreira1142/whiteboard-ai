@@ -166,4 +166,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For any questions or support, please contact [Your Name] at [your.email@example.com].
+For any questions or support, please contact [Pedro Ferreira] at [pedroferreira1142@gmail.com].
